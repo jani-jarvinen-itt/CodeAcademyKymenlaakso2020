@@ -27,3 +27,6 @@ DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.dll
 DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.exe
 DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.genruntimeconfig.cache
 DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.pdb
+/DotNet/CommonTypeSystemDemo/.vs/CommonTypeSystemDemo/v16
+/DotNet/CommonTypeSystemDemo/CommonTypeSystemDemo/bin/Debug
+/DotNet/CommonTypeSystemDemo/CommonTypeSystemDemo/obj/Debug
