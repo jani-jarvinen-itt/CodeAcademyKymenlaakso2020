@@ -32,3 +32,6 @@ DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.pdb
 /DotNet/CommonTypeSystemDemo/CommonTypeSystemDemo/obj/Debug
 /DotNet/CommonTypeSystemDemo/CtsTestApp/bin/Debug
 /DotNet/CommonTypeSystemDemo/CtsTestApp/obj/Debug
+/DotNet/FileStreamDemo/.vs/FileStreamDemo
+/DotNet/FileStreamDemo/FileStreamDemo/bin/Debug
+/DotNet/FileStreamDemo/FileStreamDemo/obj/Debug
