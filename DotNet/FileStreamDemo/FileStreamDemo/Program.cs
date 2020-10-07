@@ -28,9 +28,17 @@ namespace FileStreamDemo
                     luvut.Add(luku);
                 }
             }
+            catch (PathTooLongException ex)
+            {
+                Console.WriteLine("Virhe tiedoston polussa: " + ex.Message);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Tiedoston lukuvirhe: " + ex.Message);
+            }
             catch (Exception ex)
             {
-                Console.WriteLine("Virhe tiedoston lukemisessa: " + ex.Message);
+                Console.WriteLine("Yleinen virhe tiedoston lukemisessa: " + ex.Message);
             }
             finally
             {
