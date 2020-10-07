@@ -26,9 +26,9 @@ namespace TiedostoJaPoikkeukset
                 double keskiarvo = luvut.Average();
                 Console.WriteLine("Keskiarvo on: " + keskiarvo);
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine("Tiedoston lukemisessa tapahtui virhe.");
+                Console.WriteLine("Tiedoston lukemisessa tapahtui virhe: " + ex.Message);
             }
         }
     }
