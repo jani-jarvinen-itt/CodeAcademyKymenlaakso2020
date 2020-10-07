@@ -11,32 +11,37 @@ namespace FileStreamDemo
         static void Main(string[] args)
         {
             List<int> luvut = new List<int>();
+            FileStream stream = null;
             try
             {
                 string tiedostoNimi = @"C:\Academy\Kotka\Git\CodeAcademyKymenlaakso2020\DotNet\Lukuja.txt";
-                FileStream stream = new FileStream(tiedostoNimi, FileMode.Open, FileAccess.Read);
+                stream = new FileStream(tiedostoNimi, FileMode.Open, FileAccess.Read);
 
-                try
-                {
-                    byte[] tavut = new byte[stream.Length];
-                    stream.Read(tavut, 0, (int)stream.Length);
-                    string teksti = Encoding.ASCII.GetString(tavut);
-                    string[] rivit = teksti.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                byte[] tavut = new byte[stream.Length];
+                stream.Read(tavut, 0, (int)stream.Length);
+                string teksti = Encoding.ASCII.GetString(tavut);
+                string[] rivit = teksti.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                    foreach (string rivi in rivit)
-                    {
-                        int luku = int.Parse(rivi);
-                        luvut.Add(luku);
-                    }
-                }
-                finally
+                foreach (string rivi in rivit)
                 {
-                    stream.Close();
+                    int luku = int.Parse(rivi);
+                    luvut.Add(luku);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Virhe tiedoston lukemisessa: " + ex.Message);
+            }
+            finally
+            {
+                /*
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+                */
+
+                stream?.Close();
             }
 
             double keskiarvo = luvut.Average();
