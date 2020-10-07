@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FileStreamDemo
 {
@@ -48,10 +45,21 @@ namespace FileStreamDemo
             }
 
             // throw new Exception("Virhe!");
-            // stream.Close();
+            stream.Close();
+            stream.Dispose();
+            // stream = null;
 
             Console.WriteLine("Kirjoitus (10 kertaa) tehty!");
             // Console.ReadLine();
+
+        }
+
+        /// <summary>
+        /// Tämä on tämän metodin kuvaus...
+        /// </summary>
+        private static void TestiMetodi()
+        {
+            throw new NotImplementedException();
         }
     }
 }
