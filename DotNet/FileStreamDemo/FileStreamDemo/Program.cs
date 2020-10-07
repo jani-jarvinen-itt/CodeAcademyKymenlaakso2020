@@ -11,6 +11,7 @@ namespace FileStreamDemo
     {
         static void Main(string[] args)
         {
+            /*
             string tiedostoNimi = @"C:\Academy\Kotka\Git\CodeAcademyKymenlaakso2020\DotNet\Lukuja.txt";
             FileStream stream = new FileStream(tiedostoNimi, FileMode.Open, FileAccess.Read);
 
@@ -28,6 +29,25 @@ namespace FileStreamDemo
 
             double keskiarvo = luvut.Average();
             Console.WriteLine("Keskiarvo on: " + keskiarvo);
+            */
+
+            Console.WriteLine("Aloitetaan tiedostoon kirjoittaminen.");
+
+            string tiedostoNimi = @"C:\Temp\Testi.txt";
+            FileStream stream = new FileStream(tiedostoNimi, FileMode.Create, FileAccess.ReadWrite);
+            string teksti = "Moi Code Academy!\r\n";
+            byte[] tavut = Encoding.UTF8.GetBytes(teksti);
+
+            for (int i = 0; i < 10; i++)
+            {
+                stream.Write(tavut, 0, tavut.Length);
+            }
+
+            // throw new Exception("Virhe!");
+            // stream.Close();
+
+            Console.WriteLine("Kirjoitus (10 kertaa) tehty!");
+            // Console.ReadLine();
         }
     }
 }
