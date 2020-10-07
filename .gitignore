@@ -41,3 +41,5 @@ DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.pdb
 /DotNet/HttpClientDemo/.vs/HttpClientDemo/v16
 /DotNet/HttpClientDemo/HttpClientDemo/bin/Debug
 /DotNet/HttpClientDemo/HttpClientDemo/obj/Debug
+/DotNet/HttpClientDemo/HttpClientGui/bin/Debug
+/DotNet/HttpClientDemo/HttpClientGui/obj/Debug

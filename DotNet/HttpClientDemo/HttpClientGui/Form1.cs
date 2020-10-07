@@ -1,20 +1,30 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace HttpClientDemo
+namespace HttpClientGui
 {
-    class Program
+    public partial class Form1 : Form
     {
-        static void Main(string[] args)
+        private static HttpClient client = new HttpClient();
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             // alustukset
             string url = "http://jsonplaceholder.typicode.com/albums";
-            HttpClient client = new HttpClient();
 
             // tehdään HTTP-pyyntö
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -33,13 +43,13 @@ namespace HttpClientDemo
             nimet.Sort();
 
             // tulostus
+            string tulos = "";
             foreach (string nimi in nimet)
             {
-                Console.WriteLine(nimi);
+                tulos += nimi + "\r\n";
             }
 
-            client.Dispose();
-            Console.ReadLine();
+            textBox1.Text = tulos;
         }
     }
 }
