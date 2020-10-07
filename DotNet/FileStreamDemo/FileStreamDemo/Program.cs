@@ -35,7 +35,11 @@ namespace FileStreamDemo
 
             string tiedostoNimi = @"C:\Temp\Testi.txt";
             FileStream stream = new FileStream(tiedostoNimi, FileMode.Create, FileAccess.ReadWrite);
-            string teksti = "Moi Code Academy!\r\n";
+
+            byte[] bom = Encoding.UTF8.GetPreamble();
+            stream.Write(bom, 0, bom.Length);
+
+            string teksti = "Moi Code Academy åäö ÅÄÖ € ԜӬ!\r\n";
             byte[] tavut = Encoding.UTF8.GetBytes(teksti);
 
             for (int i = 0; i < 10; i++)
