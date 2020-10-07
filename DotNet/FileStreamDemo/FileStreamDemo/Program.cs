@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace FileStreamDemo
@@ -8,26 +10,39 @@ namespace FileStreamDemo
     {
         static void Main(string[] args)
         {
-            /*
-            string tiedostoNimi = @"C:\Academy\Kotka\Git\CodeAcademyKymenlaakso2020\DotNet\Lukuja.txt";
-            FileStream stream = new FileStream(tiedostoNimi, FileMode.Open, FileAccess.Read);
-
-            byte[] tavut = new byte[stream.Length];
-            stream.Read(tavut, 0, (int)stream.Length);
-            string teksti = Encoding.ASCII.GetString(tavut);
-            string[] rivit = teksti.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-
             List<int> luvut = new List<int>();
-            foreach (string rivi in rivit)
+            try
             {
-                int luku = int.Parse(rivi);
-                luvut.Add(luku);
+                string tiedostoNimi = @"C:\Academy\Kotka\Git\CodeAcademyKymenlaakso2020\DotNet\Lukuja.txt";
+                FileStream stream = new FileStream(tiedostoNimi, FileMode.Open, FileAccess.Read);
+
+                try
+                {
+                    byte[] tavut = new byte[stream.Length];
+                    stream.Read(tavut, 0, (int)stream.Length);
+                    string teksti = Encoding.ASCII.GetString(tavut);
+                    string[] rivit = teksti.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    foreach (string rivi in rivit)
+                    {
+                        int luku = int.Parse(rivi);
+                        luvut.Add(luku);
+                    }
+                }
+                finally
+                {
+                    stream.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Virhe tiedoston lukemisessa: " + ex.Message);
             }
 
             double keskiarvo = luvut.Average();
             Console.WriteLine("Keskiarvo on: " + keskiarvo);
-            */
 
+            /*
             Console.WriteLine("Aloitetaan tiedostoon kirjoittaminen.");
 
             string tiedostoNimi = @"C:\Temp\Testi.txt";
@@ -51,7 +66,7 @@ namespace FileStreamDemo
 
             Console.WriteLine("Kirjoitus (10 kertaa) tehty!");
             // Console.ReadLine();
-
+            */
         }
 
         /// <summary>
