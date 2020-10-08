@@ -23,17 +23,13 @@ namespace HttpClientGui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // alustukset
-            string url = "http://jsonplaceholder.typicode.com/albums";
+            List<Album> albumit = LuetAlbumit();
+            string tulos = LajitteleJaTulosta(albumit);
+            textBox1.Text = tulos;
+        }
 
-            // tehdään HTTP-pyyntö
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            string json = response.Content.ReadAsStringAsync().Result;
-            // Console.WriteLine(json);
-
-            // muunnetaan JSON-data olioksi
-            List<Album> albumit = JsonConvert.DeserializeObject<List<Album>>(json);
-
+        private static string LajitteleJaTulosta(List<Album> albumit)
+        {
             // lajitellaan nimet
             List<string> nimet = new List<string>();
             foreach (Album albumi in albumit)
@@ -49,7 +45,22 @@ namespace HttpClientGui
                 tulos += nimi + "\r\n";
             }
 
-            textBox1.Text = tulos;
+            return tulos;
+        }
+
+        private static List<Album> LuetAlbumit()
+        {
+            // alustukset
+            string url = "http://jsonplaceholder.typicode.com/albums";
+
+            // tehdään HTTP-pyyntö
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            string json = response.Content.ReadAsStringAsync().Result;
+            // Console.WriteLine(json);
+
+            // muunnetaan JSON-data olioksi
+            List<Album> albumit = JsonConvert.DeserializeObject<List<Album>>(json);
+            return albumit;
         }
     }
 }
