@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YksikkötestausDemo", "YksikkötestausDemo\YksikkötestausDemo.csproj", "{AB303A26-63DE-41D1-93D4-6884DCC7ABD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YksikkötestausDemoTests", "YksikkötestausDemoTests\YksikkötestausDemoTests.csproj", "{32621B63-A212-40B3-9986-8B48F7128672}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB303A26-63DE-41D1-93D4-6884DCC7ABD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB303A26-63DE-41D1-93D4-6884DCC7ABD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB303A26-63DE-41D1-93D4-6884DCC7ABD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB303A26-63DE-41D1-93D4-6884DCC7ABD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32621B63-A212-40B3-9986-8B48F7128672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32621B63-A212-40B3-9986-8B48F7128672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32621B63-A212-40B3-9986-8B48F7128672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32621B63-A212-40B3-9986-8B48F7128672}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DC76CA2-3E56-4091-8B30-0C479D84253A}
+	EndGlobalSection
+EndGlobal
