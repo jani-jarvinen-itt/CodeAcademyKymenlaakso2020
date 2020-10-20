@@ -16,5 +16,50 @@ namespace WinFormsDemoSovellus
         {
             InitializeComponent();
         }
+
+        private void plusButton_Click(object sender, EventArgs e)
+        {
+            Numbers numbers = ReadNumbers();
+            int sum = numbers.A + numbers.B;
+            MessageBox.Show(sum.ToString());
+        }
+
+        private Numbers ReadNumbers()
+        {
+            Numbers numbers = new Numbers()
+            {
+                A = int.Parse(number1TextBox.Text),
+                B = int.Parse(number2TextBox.Text)
+            };
+
+            return numbers;
+        }
+
+        private void minusButton_Click(object sender, EventArgs e)
+        {
+            Numbers numbers = ReadNumbers();
+            int sum = numbers.A - numbers.B;
+            MessageBox.Show(sum.ToString());
+        }
+
+        private void multiplyButton_Click(object sender, EventArgs e)
+        {
+            Numbers numbers = ReadNumbers();
+            int sum = numbers.A * numbers.B;
+            MessageBox.Show(sum.ToString());
+        }
+
+        private void divideButton_Click(object sender, EventArgs e)
+        {
+            Numbers numbers = ReadNumbers();
+            int sum = numbers.A / numbers.B;
+            MessageBox.Show(sum.ToString());
+        }
+    }
+
+    public class Numbers
+    {
+        public int A { get; set; }
+        public int B { get; set; }
     }
 }
