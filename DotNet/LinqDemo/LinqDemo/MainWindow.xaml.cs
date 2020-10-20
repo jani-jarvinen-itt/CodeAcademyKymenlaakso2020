@@ -28,6 +28,19 @@ namespace LinqDemo
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int[] luvut = { 4, 8, 3, 9, 1, 10, 7, 2, 5 };
+            List<int> tulokset = (from l in luvut
+                                  where l > 5
+                                  orderby l
+                                  select l).ToList();
+
+            // MessageBox.Show("Tyyppi: " + tulokset.GetType().FullName);
+            foreach (int luku in tulokset)
+            {
+                MessageBox.Show(luku.ToString());
+            }
+
+            /*
+            int[] luvut = { 4, 8, 3, 9, 1, 10, 7, 2, 5 };
             List<int> tulokset = new List<int>();
             foreach (int luku in luvut)
             {
@@ -43,6 +56,7 @@ namespace LinqDemo
             {
                 MessageBox.Show(luku.ToString());
             }
+            */
         }
     }
 }
