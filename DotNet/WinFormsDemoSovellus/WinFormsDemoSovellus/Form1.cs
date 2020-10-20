@@ -55,6 +55,13 @@ namespace WinFormsDemoSovellus
             int sum = numbers.A / numbers.B;
             MessageBox.Show(sum.ToString());
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'northwindDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this.northwindDataSet.Customers);
+
+        }
     }
 
     public class Numbers
