@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinqDemo.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,21 @@ namespace LinqDemo
                 MessageBox.Show(luku.ToString());
             }
             */
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NorthwindEntities entities = new NorthwindEntities();
+
+            List<Customers> suomalaiset = (from c in entities.Customers
+                                           where c.Country == "Finland"
+                                           orderby c.CompanyName
+                                           select c).ToList();
+
+            foreach (Customers asiakas in suomalaiset)
+            {
+                MessageBox.Show(asiakas.CompanyName.ToString());
+            }
         }
     }
 }
