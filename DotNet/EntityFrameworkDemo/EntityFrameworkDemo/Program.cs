@@ -12,6 +12,7 @@ namespace EntityFrameworkDemo
         {
             Console.WriteLine("Moi Entity Framework!");
 
+            /*
             NorthwindContext entities = new NorthwindContext();
 
             List<Customers> suomalaiset = (from c in entities.Customers
@@ -46,6 +47,30 @@ namespace EntityFrameworkDemo
                 Console.WriteLine(merkintä.ValueDate + ": " + merkintä.TemperatureValue);
             }
             */
+
+            TemperaturesContext context = new TemperaturesContext();
+
+            // rivin lisääminen kantaan
+            Temperatures uusi = new Temperatures()
+            {
+                SensorId = "C#-sensori",
+                TemperatureValue = 16.8,
+                ValueDate = DateTime.Now
+            };
+
+            context.Temperatures.Add(uusi);
+            context.SaveChanges();
+
+            // datan muokkaus
+            Temperatures merkintä = (from t in context.Temperatures
+                                     where t.ValueDate > new DateTime(2020, 10, 1)
+                                     select t).FirstOrDefault();
+
+            if (merkintä != null)
+            {
+                merkintä.TemperatureValue += 0.6;
+            }
+            context.SaveChanges();
         }
     }
 }
