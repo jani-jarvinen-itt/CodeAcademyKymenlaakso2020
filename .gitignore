@@ -63,3 +63,7 @@ DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.pdb
 /DotNet/EntityFrameworkDemo/.vs/EntityFrameworkDemo/v16
 /DotNet/EntityFrameworkDemo/EntityFrameworkDemo/bin/Debug/netcoreapp3.1
 /DotNet/EntityFrameworkDemo/EntityFrameworkDemo/obj
+/DotNet/AspNetWebApiDemo/.vs/AspNetWebApiDemo
+/DotNet/AspNetWebApiDemo/AspNetWebApiDemo/bin/Debug/netcoreapp3.1
+/DotNet/AspNetWebApiDemo/AspNetWebApiDemo/obj
+/DotNet/EntityFrameworkDemo/.vs/EntityFrameworkDemo/DesignTimeBuild
