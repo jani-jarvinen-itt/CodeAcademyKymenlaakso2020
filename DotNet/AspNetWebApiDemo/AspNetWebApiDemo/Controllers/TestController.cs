@@ -12,7 +12,8 @@ namespace AspNetWebApiDemo.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        public Asiakas Moi()
+        [HttpGet]
+        public Asiakas PalautaYksittäinenAsiakas()
         {
             return new Asiakas()
             {
@@ -20,6 +21,12 @@ namespace AspNetWebApiDemo.Controllers
                 Nimi = "Matti Möttönen",
                 Puhelinnumero = "09 123 4567"
             };
+        }
+
+        [HttpPost]
+        public string PostTesti()
+        {
+            return "Moi, olen POST-kutsun vastaus.";
         }
     }
 }
