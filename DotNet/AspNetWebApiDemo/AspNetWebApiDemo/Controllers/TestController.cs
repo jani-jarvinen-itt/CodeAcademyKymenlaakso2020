@@ -13,6 +13,7 @@ namespace AspNetWebApiDemo.Controllers
     public class TestController : ControllerBase
     {
         [HttpGet]
+        [Route("omatesti")]
         public Asiakas PalautaYksittäinenAsiakas()
         {
             return new Asiakas()
@@ -24,6 +25,7 @@ namespace AspNetWebApiDemo.Controllers
         }
 
         [HttpPost]
+        [Route("toinentesti")]
         public string PostTesti()
         {
             return "Moi, olen POST-kutsun vastaus.";
