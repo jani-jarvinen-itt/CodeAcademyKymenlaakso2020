@@ -13,6 +13,7 @@ namespace AspNetWebApiDemo.Controllers
     public class CustomersController : ControllerBase
     {
         // vastaa osoitteessa: /api/customers
+        [HttpGet]
         public List<Customers> PalautaKaikki()
         {
             NorthwindContext konteksti = new NorthwindContext();
@@ -22,6 +23,7 @@ namespace AspNetWebApiDemo.Controllers
         }
 
         // vastaa osoitteessa: /api/customers/NIMI
+        [HttpGet]
         [Route("{customerId}")]
         public Customers PalautaYksittäinen(string customerId)
         {
@@ -29,6 +31,26 @@ namespace AspNetWebApiDemo.Controllers
             Customers asiakas = konteksti.Customers.Find(customerId);
 
             return asiakas;
+        }
+
+        [HttpPost]
+        public bool LisääUusi()
+        {
+            NorthwindContext konteksti = new NorthwindContext();
+
+            Customers uusi = new Customers()
+            {
+                CustomerId = "UUSI1",
+                CompanyName = "C#-koodin kautta lisätty",
+                ContactName = "Teppo Testaaja",
+                Country = "Finland",
+                Phone = "050 987 6543"
+            };
+
+            konteksti.Customers.Add(uusi);
+            konteksti.SaveChanges();
+
+            return true;
         }
     }
 }
