@@ -67,3 +67,6 @@ DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.pdb
 /DotNet/AspNetWebApiDemo/AspNetWebApiDemo/bin/Debug/netcoreapp3.1
 /DotNet/AspNetWebApiDemo/AspNetWebApiDemo/obj
 /DotNet/EntityFrameworkDemo/.vs/EntityFrameworkDemo/DesignTimeBuild
+/DotNet/DataIntegraatioDemo/.vs/DataIntegraatioDemo/v16
+/DotNet/DataIntegraatioDemo/DataIntegraatioDemo/bin/Debug/netcoreapp3.1
+/DotNet/DataIntegraatioDemo/DataIntegraatioDemo/obj
