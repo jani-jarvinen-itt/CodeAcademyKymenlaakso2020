@@ -33,19 +33,11 @@ namespace AspNetWebApiDemo.Controllers
             return asiakas;
         }
 
+        // vastaa osoitteessa: /api/customers
         [HttpPost]
-        public bool LisääUusi()
+        public bool LisääUusi(Customers uusi)
         {
             NorthwindContext konteksti = new NorthwindContext();
-
-            Customers uusi = new Customers()
-            {
-                CustomerId = "UUSI1",
-                CompanyName = "C#-koodin kautta lisätty",
-                ContactName = "Teppo Testaaja",
-                Country = "Finland",
-                Phone = "050 987 6543"
-            };
 
             konteksti.Customers.Add(uusi);
             konteksti.SaveChanges();
