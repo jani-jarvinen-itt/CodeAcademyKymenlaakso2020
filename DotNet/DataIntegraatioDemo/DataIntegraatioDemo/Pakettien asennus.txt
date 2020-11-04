@@ -6,4 +6,6 @@
 
 Muodosta tietokantamalli seuraavalla komennolla:
 
-Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=Northwind;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DataModelNorthwind
+
+Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=AdventureWorks2016CTP3;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DataModelAdventureWorks
