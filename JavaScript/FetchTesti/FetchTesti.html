@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript-testi</title>
+</head>
+
+<body>
+    <h1>Fetch-testi</h1>
+
+    <script>
+        console.log("Aloitetaan Fetch-kutsun tekeminen!");
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json));
+    </script>
+</body>
+
+</html>
