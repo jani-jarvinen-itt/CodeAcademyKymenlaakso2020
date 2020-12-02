@@ -1,9 +1,17 @@
 const fetchApi = require("node-fetch");
 
-function haeAlbumit(käsittely) {
+interface YksiAlbumi {
+    userId: number;
+    id: number;
+    title: string;
+}
+
+type AlbuminKäsittelijä = (a: YksiAlbumi) => void;
+
+function haeAlbumit(käsittely: AlbuminKäsittelijä) {
     fetchApi('https://jsonplaceholder.typicode.com/albums')
         .then(response => response.json())
-        .then(json => {
+        .then((json: YksiAlbumi[]) => {
             for (const albumi of json) {
                 käsittely(albumi);
             }
