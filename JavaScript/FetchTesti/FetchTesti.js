@@ -1,17 +1,18 @@
 const fetch = require("node-fetch");
 
-fetch('https://jsonplaceholder.typicode.com/albums')
-    .then(response => response.json())
-    .then(json => {
+function haeAlbumit(käsittely) {
+    fetch('https://jsonplaceholder.typicode.com/albums')
+        .then(response => response.json())
+        .then(json => {
+            for (albumi of json) {
+                käsittely(albumi);
+            }
+        });
+}
 
-        /*
-          for (let index = 0; index < json.length; index++) {
-              const element = json[index];
-              console.log(element.title);
-          }
-        */
-
-        for (albumi of json) {
-            console.log(albumi.title);
-        }
-    });
+// haeAlbumit((a) => console.log(a.title));
+haeAlbumit((a) => {
+    if (a.id > 80) {
+        console.log(a.id);
+    }
+});
