@@ -7,8 +7,15 @@ function Nappi(props) {
             "\" on klikattu.");
     }
 
+    let värikoodi = "primary";
+    if (props.väri) {
+        värikoodi = props.väri;
+    }
+
+    const napinTyyli = `btn btn-${värikoodi} m-3`;
+
     return (
-        <button className="btn btn-primary m-3" onClick={nappiaKlikattu}>
+        <button className={napinTyyli} onClick={nappiaKlikattu}>
             {props.teksti}
         </button>
     );

@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <TokaOma /> */}
     <Nappi teksti="Klikkaa tästä!" />
-    <Nappi teksti="Toinen nappi" />
+    <Nappi teksti="Toinen nappi" väri="danger" />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
