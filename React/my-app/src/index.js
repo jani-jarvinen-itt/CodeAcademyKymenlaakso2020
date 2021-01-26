@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TokaOma from './TokaOma';
+import Nappi from './Nappi';
+// import TokaOma from './TokaOma';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TokaOma />
+    {/* <TokaOma /> */}
+    <Nappi teksti="Klikkaa tästä!" />
+    <Nappi teksti="Toinen nappi" />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
