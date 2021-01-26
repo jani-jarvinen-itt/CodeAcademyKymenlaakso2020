@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import EkaOma from './EkaOma';
+import TokaOma from './TokaOma';
 
 ReactDOM.render(
   <React.StrictMode>
-    <EkaOma />
+    <TokaOma />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
