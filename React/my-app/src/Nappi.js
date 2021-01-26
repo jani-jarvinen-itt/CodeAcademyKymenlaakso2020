@@ -8,7 +8,7 @@ function Nappi(props) {
     }
 
     return (
-        <button onClick={nappiaKlikattu}>
+        <button className="btn btn-primary m-3" onClick={nappiaKlikattu}>
             {props.teksti}
         </button>
     );
