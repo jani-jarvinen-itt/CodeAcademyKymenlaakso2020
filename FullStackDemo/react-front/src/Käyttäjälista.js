@@ -9,6 +9,20 @@ class Käyttäjälista extends React.Component {
         console.log("Käyttäjälista.constructor");
     }
 
+    componentDidMount() {
+
+        console.log("Käyttäjälista.componentDidMount");
+        
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(käyttäjät => {
+            
+                console.log(`Käyttäjädata ladattu! Tuloksia ${käyttäjät.length} kpl.`);
+
+                this.setState({ käyttäjät: käyttäjät });
+            });
+    }
+
     render() {
 
         console.log("Käyttäjälista.render");
