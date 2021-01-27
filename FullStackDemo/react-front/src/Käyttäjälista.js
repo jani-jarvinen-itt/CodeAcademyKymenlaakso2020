@@ -30,7 +30,9 @@ class Käyttäjälista extends React.Component {
         const lista = [];
         for (let index = 0; index < this.state.käyttäjät.length; index++) {
             const käyttäjä = this.state.käyttäjät[index];
-            lista.push(<p>Id: {käyttäjä.id}, nimi: {käyttäjä.name}</p>);
+            
+            const id = käyttäjä.id.toString();
+            lista.push(<p key={id}>Id: {id}, nimi: {käyttäjä.name}</p>);
         }
 
         return (
