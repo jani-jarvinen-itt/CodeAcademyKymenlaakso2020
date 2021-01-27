@@ -13,6 +13,8 @@ namespace FullStackAspNetWebApiDemo
 {
     public class Startup
     {
+        const string CorsPolitiikanNimi = "CodeAcademy-CORS";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +25,20 @@ namespace FullStackAspNetWebApiDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: CorsPolitiikanNimi,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin().AllowAnyMethod();
+
+                                      /*
+                                      builder.WithOrigins("http://example.com",
+                                                          "http://www.contoso.com");
+                                      */
+                                  });
+            });
+
             services.AddControllersWithViews();
         }
 
@@ -43,6 +59,8 @@ namespace FullStackAspNetWebApiDemo
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors(CorsPolitiikanNimi);
 
             app.UseAuthorization();
 
