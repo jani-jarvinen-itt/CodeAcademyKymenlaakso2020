@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Käyttäjälista from './Käyttäjälista';
+import Asiakaslistaus from './Asiakaslistaus';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Käyttäjälista />
+    <Asiakaslistaus />
   </React.StrictMode>,
   document.getElementById('root')
 );
