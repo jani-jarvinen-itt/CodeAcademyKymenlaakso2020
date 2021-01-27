@@ -12,11 +12,11 @@ class Asiakaslistaus extends React.Component {
     componentDidMount() {
 
         console.log("Asiakaslistaus.componentDidMount");
-        
+
         fetch("https://localhost:44393/api/customers")
             .then(response => response.json())
             .then(asiakkaat => {
-            
+
                 console.log(`Käyttäjädata ladattu! Tuloksia ${asiakkaat.length} kpl.`);
 
                 this.setState({ asiakkaat: asiakkaat });
@@ -30,15 +30,30 @@ class Asiakaslistaus extends React.Component {
         const lista = [];
         for (let index = 0; index < this.state.asiakkaat.length; index++) {
             const asiakas = this.state.asiakkaat[index];
-            
+
             const id = asiakas.customerId;
-            lista.push(<p key={id}>Id: {id}, nimi: {asiakas.companyName}</p>);
+            lista.push(<tr key={id}>
+                <td>{id}</td>
+                <td>{asiakas.companyName}</td>
+                <td>{asiakas.country}</td>
+            </tr>);
         }
 
         return (
             <div>
                 <h1>Tämä on Asiakaslistaus-komponentti</h1>
-                {lista}
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Customer Id</th>
+                            <th>Company Name</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {lista}
+                    </tbody>
+                </table>
             </div>
         );
     }
