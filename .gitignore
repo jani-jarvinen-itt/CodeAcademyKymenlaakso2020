@@ -85,3 +85,9 @@ DotNet/HelloWorldCore/obj/Debug/netcoreapp3.1/HelloWorldCore.pdb
 /DotNet/AzureCosmosDbDemo/AzureCosmosDbDemo/obj
 /DotNet/AzureWebAppDemo/AzureWebAppDemo/bin/Release/net5.0
 /DotNet/AzureWebAppDemo/.vs/AzureWebAppDemo/config
+/DotNet/AzureWebAppDemo/.vs/AzureWebAppDemo/DesignTimeBuild
+/DotNet/Microsoft265WebAppDemo/.vs/Microsoft265WebAppDemo/v16
+/DotNet/Microsoft265WebAppDemo/Microsoft265WebAppDemo/bin/Debug/net5.0
+/DotNet/Microsoft365WebAppDemo/.vs/Microsoft365WebAppDemo/v16
+/DotNet/Microsoft365WebAppDemo/Microsoft365WebAppDemo/bin/Debug/netcoreapp3.1
+/DotNet/Microsoft365WebAppDemo/Microsoft365WebAppDemo/obj
